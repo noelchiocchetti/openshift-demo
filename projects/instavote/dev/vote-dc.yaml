@@ -4,17 +4,17 @@ metadata:
   name: vote
   namespace: instavote
 spec:
-  strategy: 
+  strategy:
     type: Rolling
-    rollingParams: 
+    rollingParams:
       maxSurge: 2
       maxUnavailable: 1
       intervalSeconds: 20
   replicas: 12
-  selector: 
+  selector:
     role: vote
     version: v2
-  template: 
+  template:
     metadata:
       name: vote
       labels:
@@ -25,4 +25,3 @@ spec:
       containers:
       - name: app
         image: initcron/oc-vote:v2
-    
